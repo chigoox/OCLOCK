@@ -1,3 +1,4 @@
+
 import EmblaCarousel from "./Componets/HomePage/Carousel";
 import { bannerImage } from "./META";
 import IGFeed from "./Componets/HomePage/IGFeed";

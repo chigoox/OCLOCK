@@ -18,7 +18,7 @@ export const siteTag = 'Raw Luxury Hair'
 export const orderNumberPrefix = 'Vi'
 export const category = ['Hoodies', 'Shorts']
 
-export const IGFeedURL = 'https://feeds.behold.so/trP3rN6f5NfTye0m7zu0'
+export const IGFeedURL = 'https://feeds.behold.so/vOsDvHVWwnD25oSzFvCQ'
 
 const img1 = 'https://images.unsplash.com/photo-1697644371824-41d4d0a8a12f?auto=format&fit=crop&q=80&w=3871&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 const img2 = 'https://wwd.com/wp-content/uploads/2016/07/short-shorts-14.jpg?w=1280'
