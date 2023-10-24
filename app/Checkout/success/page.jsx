@@ -5,7 +5,9 @@ import OrderItemPage from './OrderItemPage'
 
 async function success() {
 
-    const { orderID } = await fetchDocument('Admin', 'Orders')
+    const { orderID } = await fetchDocument('Admin', 'Orders').then(resp => {
+        return resp ? resp : {};
+    })
 
 
 
