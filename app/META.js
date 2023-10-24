@@ -13,9 +13,9 @@ export const siteName = <div className="center-col">
     Shop by 5 O'clock
 </div>
 
-export const NavBarVideoURL = 'QWHjHFtDfV8'
-export const siteTag = 'Raw Luxury Hair'
-export const orderNumberPrefix = 'Vi'
+export const NavBarVideoURL = '7FjL6i04_uY'
+export const siteTag = 'For the Brave'
+export const orderNumberPrefix = '5CK'
 export const category = ['Hoodies', 'Shorts']
 
 export const IGFeedURL = 'https://feeds.behold.so/vOsDvHVWwnD25oSzFvCQ'
