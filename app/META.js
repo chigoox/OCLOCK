@@ -40,6 +40,11 @@ export const HomePageCategoryImages = (category) =>{
                 return RawBundlesImage 
             case 'Hot Tools' :
                 return RawTools
+                case 'Hoodies' :
+                return 'https://images.unsplash.com/photo-1548382983-7f844c6f5ed4?auto=format&fit=crop&q=80&w=2340&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                case 'Shorts' :
+                return 'https://cutiebootsboutique.com/cdn/shop/products/GroceriesSnackShorts_1024x1024@2x.jpg?v=1632591666'
+
         default:
             return 'https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&q=80&w=2193&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
