@@ -2,7 +2,7 @@ import { checkout } from "@/app/myCodes/Stripe"
 import Image from "next/image"
 import { useCartContext } from "@/StateManager/CartContext";
 import ItemQTYButton from "../../Shop/Componets/ItemQTYButton";
-import { DeleteIcon, Trash2Icon } from "lucide-react";
+import { Trash2Icon } from "lucide-react";
 import { useAUTHListener } from "@/StateManager/AUTHListener";
 import { fetchDocument } from "@/app/myCodes/Database";
 import { useEffect, useState } from "react";
