@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import { useAUTHListener } from './AUTHListener';
 import { addToDatabase } from '@/app/myCodes/Database';
+import { useEffect } from 'react';
+import { useAUTHListener } from './AUTHListener';
 
 function useLocalStorage(state, dispatch, initialCartState) {
   const user = useAUTHListener() 

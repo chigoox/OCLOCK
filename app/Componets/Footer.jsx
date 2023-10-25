@@ -1,10 +1,10 @@
 'use client'
-import React, { useState } from 'react'
+import { Button, Input } from '@nextui-org/react'
+import { Jost } from 'next/font/google'
+import Link from 'next/link'
+import { useState } from 'react'
 import { AiFillFacebook, AiFillInstagram, AiFillTwitterSquare, AiFillYoutube } from 'react-icons/ai'
 import { siteName } from '../META'
-import Link from 'next/link'
-import { Jost } from 'next/font/google'
-import { Button, Input } from '@nextui-org/react'
 import { collectAndSendEmail } from './General/EmailCollector'
 
 const jost = Jost({

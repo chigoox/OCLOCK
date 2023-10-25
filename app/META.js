@@ -1,12 +1,8 @@
-import VIXBAN3 from "../public/Images/Banners/Banner2.png";
-import VIXBAN2 from "../public/Images/Banners/Banner1.png";
 import IMG from "public/Images/0A90A7F5-E6FC-421A-8A5D-9383ED7A1868.JPG";
-import RawBundlesImage from '../public/Images/RawBundles.jpeg'
-import RawLace from '../public/Images/RawLace.jpeg'
-import RawWig from '../public/Images/RawWig.jpeg'
-import RawTools from '../public/Images/RawTools.jpeg'
-import Logo from '../public/Images/logo.png'
-import Image from "next/image";
+import RawBundlesImage from '../public/Images/RawBundles.jpeg';
+import RawLace from '../public/Images/RawLace.jpeg';
+import RawTools from '../public/Images/RawTools.jpeg';
+import RawWig from '../public/Images/RawWig.jpeg';
 
 
 export const siteName = 'Shop by 5 O\'clock'

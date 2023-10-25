@@ -1,10 +1,10 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Grandstander, Dosis } from 'next/font/google'
-import { Skeleton } from "@nextui-org/react";
-import { useEffect, useState } from 'react';
 import { getRand } from '@/app/myCodes/Util';
+import { Skeleton } from "@nextui-org/react";
+import { Dosis, Grandstander } from 'next/font/google';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 const font = Grandstander({ subsets: ['latin'], weight: ['400'] })
 const font2 = Dosis({ subsets: ['latin'], weight: ['400'] })
 

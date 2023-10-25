@@ -1,11 +1,11 @@
 'use client'
 import app, { AUTH } from '@/Firebase'
-import { useGuest, useSignInGuest } from '@/app/Hooks/useGuest'
+import { useGuest } from '@/app/Hooks/useGuest'
 import { fetchDocument } from '@/app/myCodes/Database'
 import { addEmailToList, addUIDToList } from '@/app/myCodes/DatabaseUtils'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 
 function AUTHListener({ add = false, set, protectedPage }) {

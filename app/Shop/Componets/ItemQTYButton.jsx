@@ -1,7 +1,7 @@
 import { useCartContext } from '@/StateManager/CartContext'
 import { Button } from '@nextui-org/react'
-import { BellMinus, Minus, MinusIcon, Plus, PlusIcon } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import { MinusIcon, PlusIcon } from 'lucide-react'
+import { useEffect, useState } from 'react'
 function ItemQTYButton({ state, setState, product, forCart }) {
     const { dispatch } = useCartContext()
     const [QTY, setQTY] = useState(product?.Qty ? product?.Qty : 0)

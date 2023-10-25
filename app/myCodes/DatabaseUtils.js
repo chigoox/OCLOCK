@@ -1,4 +1,4 @@
-import { addToDatabase, updateArrayDatabaseItem } from "./Database"
+import { updateArrayDatabaseItem } from "./Database"
 
 export const addEmailToList = (email) =>{
 //addToDatabase('Admin', 'Emails', 'emails', {email})

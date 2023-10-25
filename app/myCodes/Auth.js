@@ -1,8 +1,8 @@
 'use client'
-import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider, signOut, signInAnonymously } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
 import app, { AUTH } from "@/Firebase";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app)
@@ -137,4 +137,4 @@ const sendPasswordReset = async () => {
 
 
 
-export {signUp,getUID, logIn, loginWith, logOut, checkLoggedinUser, sendVerification, sendPasswordReset, } 
+export { checkLoggedinUser, getUID, logIn, logOut, loginWith, sendPasswordReset, sendVerification, signUp };

@@ -1,4 +1,4 @@
-import { Lilita_One, Philosopher } from 'next/font/google'
+import { Philosopher } from 'next/font/google'
 const font = Philosopher({ subsets: ['latin'], weight: ['400'] })
 
 const ShopCategoryTitle = ({ title }) => (<div className={font.className}>

@@ -1,9 +1,8 @@
 'use client'
-import React from 'react'
+import { categoryLinks } from '@/app/META'
+import { usePathname } from 'next/navigation'
 import ProductsList from '../Componets/ProductsList'
 import ShopCategoryTitle from '../Componets/ShopCategoryTitle'
-import { usePathname } from 'next/navigation'
-import { categoryLinks } from '@/app/META'
 
 
 function CategoryPage() {

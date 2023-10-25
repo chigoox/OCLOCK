@@ -1,8 +1,8 @@
 import { siteName } from '@/app/META';
 import {
     Body,
-    Container,
     Column,
+    Container,
     Head,
     Heading,
     Hr,
@@ -15,7 +15,6 @@ import {
     Text,
 } from '@react-email/components';
 import { format } from 'date-fns';
-import React from 'react';
 
 const baseUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`

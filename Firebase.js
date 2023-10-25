@@ -27,4 +27,5 @@ const STORAGE = getStorage(app)
 
 
 export default app
-export {DATABASE, AUTH, STORAGE}
+export { AUTH, DATABASE, STORAGE };
+

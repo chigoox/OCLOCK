@@ -1,12 +1,12 @@
 'use client'
-import React, { useState } from 'react'
 import { useAUTHListener } from '@/StateManager/AUTHListener'
-import { fetchDocument } from '@/app/myCodes/Database'
-import { useRouter } from "next/navigation"
 import { useCartContext } from '@/StateManager/CartContext'
-import { Button } from '@nextui-org/react'
-import IMG from '@/public/Images/luxlace.JPG'
+import { fetchDocument } from '@/app/myCodes/Database'
 import { sendMail } from '@/app/myCodes/Email'
+import IMG from '@/public/Images/luxlace.JPG'
+import { Button } from '@nextui-org/react'
+import { useRouter } from "next/navigation"
+import { useState } from 'react'
 
 
 function OrderItemPage({ orderID }) {

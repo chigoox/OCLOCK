@@ -1,12 +1,10 @@
 import { CartWrapper } from '@/StateManager/CartContext'
+import { Inter, Jost } from 'next/font/google'
 import Footer from './Componets/Footer'
 import NavBar from './Componets/Header/NavBar'
-import { siteName } from './META'
+import { siteName, siteTag } from './META'
+import { UIProvider } from './UIProvider'
 import './globals.css'
-import { Inter, Jost } from 'next/font/google'
-import {  UIProvider } from './UIProvider'
-import AUTHListener from '@/StateManager/AUTHListener'
-import EmailCollector from './Componets/General/EmailCollector'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,7 +12,7 @@ const jost = Jost({ subsets: ['latin'] })
 
 export const metadata = {
   title: siteName,
-  description: 'Luxury Raw Hair',
+  description: siteTag,
 }
 
 

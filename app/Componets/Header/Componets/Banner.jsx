@@ -1,8 +1,8 @@
 
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
-import './colors.css'
 import { fetchDocument } from '@/app/myCodes/Database'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import './colors.css'
 
 function Banner({ message, link, linkMessage, linkColor }) {
 

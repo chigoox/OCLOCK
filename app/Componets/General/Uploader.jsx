@@ -1,7 +1,7 @@
-import { Modal, Upload, message } from 'antd'
-import { AiOutlinePlusSquare } from "react-icons/ai";
-import { useEffect, useState } from "react"
 import { useUploader } from '@/app/Hooks/useUploader';
+import { Modal, Upload } from 'antd';
+import { useEffect, useState } from "react";
+import { AiOutlinePlusSquare } from "react-icons/ai";
 
 const getBase64 = (file) =>
     new Promise((resolve, reject) => {

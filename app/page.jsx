@@ -1,10 +1,10 @@
 
-import EmblaCarousel from "./Componets/HomePage/Carousel";
-import { bannerImage } from "./META";
-import IGFeed from "./Componets/HomePage/IGFeed";
-import ProductsList from "./Shop/Componets/ProductsList";
 import EmailCollectorMain from "./Componets/General/EmailCollectorMain";
+import EmblaCarousel from "./Componets/HomePage/Carousel";
 import HomeProtuctCategories from "./Componets/HomePage/HomeProtuctCategories";
+import IGFeed from "./Componets/HomePage/IGFeed";
+import { bannerImage } from "./META";
+import ProductsList from "./Shop/Componets/ProductsList";
 
 export default function Home() {
 

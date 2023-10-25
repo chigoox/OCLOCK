@@ -1,19 +1,19 @@
 'use client'
-import Link from 'next/link'
-import React, { Suspense, useState } from 'react'
-import Banner from './Componets/Banner'
-import { Jost } from 'next/font/google'
-import { AiOutlineClose, AiOutlineShoppingCart, } from 'react-icons/ai'
-import MenuButton from '../General/MobileMenuButton'
-import { NavigationEvents } from "../NavigationEvents";
-import { NavBarVideoURL, siteName } from '@/app/META'
-import { Calendar, HomeIcon, ShoppingBagIcon, User } from 'lucide-react'
-import Cart from './Cart'
-import LoginCard from '../General/Auth/LoginCard'
-import { Button } from '@nextui-org/react'
 import { useAUTHListener } from '@/StateManager/AUTHListener'
-import { useRouter } from 'next/navigation'
 import useFilterEmptyCategory from '@/app/Hooks/useFilterCategory'
+import { NavBarVideoURL, siteName } from '@/app/META'
+import { Button } from '@nextui-org/react'
+import { HomeIcon, ShoppingBagIcon, User } from 'lucide-react'
+import { Jost } from 'next/font/google'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { Suspense, useState } from 'react'
+import { AiOutlineClose, AiOutlineShoppingCart, } from 'react-icons/ai'
+import LoginCard from '../General/Auth/LoginCard'
+import MenuButton from '../General/MobileMenuButton'
+import { NavigationEvents } from "../NavigationEvents"
+import Cart from './Cart'
+import Banner from './Componets/Banner'
 
 const jost = Jost({
     weight: '400',

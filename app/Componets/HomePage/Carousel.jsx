@@ -1,9 +1,9 @@
 'use client'
-import React, { useCallback } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { AiFillBackward, AiFillStepBackward, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
+import { useCallback } from 'react'
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 export const EmblaCarousel = ({ img1, img2, img3, img4, rounded, noArrow, dim, text, text2, text3, text4, noZoom }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])

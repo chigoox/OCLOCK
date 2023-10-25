@@ -1,5 +1,5 @@
 'use client'
-import { createContext, useContext, useMemo, useReducer, useState } from "react";
+import { createContext, useContext, useMemo, useReducer } from "react";
 import { CartReducer, initialCartState } from "./CartReducer";
 import useLocalStorage from "./useLocalStorage";
 

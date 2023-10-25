@@ -1,10 +1,9 @@
 'use client'
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardHeader, CardBody, Input } from "@nextui-org/react";
-import React, { useState } from 'react'
-import Image from "next/image";
 import { emailCollectorIMG, siteName, siteTag } from "@/app/META";
 import { addEmailToList } from "@/app/myCodes/DatabaseUtils";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { Button, Input, Modal, ModalBody, ModalContent, ModalFooter, useDisclosure } from "@nextui-org/react";
+import Image from "next/image";
+import { useState } from 'react';
 
 
 export const collectAndSendEmail = (email, setOpen) => {

@@ -1,14 +1,13 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import EmblaCarouselThumb from '@/app/Componets/HomePage/CarouselThumb'
-import { Red_Hat_Text } from 'next/font/google'
-import { fetchPricesFor, fetchProducts } from '@/app/myCodes/Stripe'
-import ItemQTYButton from '@/app/Shop/Componets/ItemQTYButton'
-import { Button, Select, SelectItem, Skeleton } from "@nextui-org/react";
 import { useCartContext } from '@/StateManager/CartContext'
+import EmblaCarouselThumb from '@/app/Componets/HomePage/CarouselThumb'
 import { useGetItemData } from '@/app/Hooks/useGetItemData'
-import { getRand } from '@/app/myCodes/Util'
+import ItemQTYButton from '@/app/Shop/Componets/ItemQTYButton'
+import { fetchPricesFor, fetchProducts } from '@/app/myCodes/Stripe'
+import { Button, Select, SelectItem, Skeleton } from "@nextui-org/react"
+import { Red_Hat_Text } from 'next/font/google'
+import { useEffect, useState } from 'react'
 
 const font1 = Red_Hat_Text({ subsets: ['latin'] })
 

@@ -1,7 +1,6 @@
 
-import { fetchDocument } from '@/app/myCodes/Database'
-import React from 'react'
-import OrderItemPage from './OrderItemPage'
+import { fetchDocument } from '@/app/myCodes/Database';
+import OrderItemPage from './OrderItemPage';
 
 async function success() {
 

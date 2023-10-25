@@ -1,4 +1,3 @@
-import { DATABASE } from "@/Firebase";
 import { orderNumberPrefix } from "@/app/META";
 import { addToDatabase, fetchDocument, updateDatabaseItem } from "@/app/myCodes/Database";
 import Cors from "micro-cors";

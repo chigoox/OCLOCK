@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { useCallback, useEffect, useState } from 'react'
 import { Thumb } from './EmblaCarouselThumbsButton'
 import { imageByIndex } from './imageByIndex'
-import { Card } from '@nextui-org/react'
 
 const EmblaCarouselThumb = ({ slides, options }) => {
     const [selectedIndex, setSelectedIndex] = useState(0)
