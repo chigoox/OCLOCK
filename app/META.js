@@ -9,12 +9,11 @@ import Logo from '../public/Images/logo.png'
 import Image from "next/image";
 
 
-export const siteName = <div className="center-col"> 
-    Shop by 5 O'clock
-</div>
+export const siteName = 'Shop by 5 O\'clock'
+export const siteTag = 'For the Brave'
+
 
 export const NavBarVideoURL = '7FjL6i04_uY'
-export const siteTag = 'For the Brave'
 export const orderNumberPrefix = '5CK'
 export const category = ['Hoodies', 'Shorts']
 

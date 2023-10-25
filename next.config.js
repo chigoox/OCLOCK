@@ -20,6 +20,7 @@ module.exports = {
         'firebasestorage.googleapis.com',
         'media.boohoo.com',
         'wwd.com',
+        'cutiebootsboutique.com',
       ],
   },
 }

@@ -12,8 +12,8 @@ export async function POST (request) {
     const session = await stripe.checkout.sessions.create({
         line_items: cart,
       mode: 'payment',
-      success_url: `http://${ !isDev() ? siteName + '.vercel.app':'localhost:3000'}/Checkout/success`,
-      cancel_url: `http://${ !isDev() ? siteName + '.vercel.app':'localhost:3000'}/Checkout/canceled`,
+      success_url: `http://${ !isDev() ? siteName.replace(/\s/g, '') + '.vercel.app':'localhost:3000'}/Checkout/success`,
+      cancel_url: `http://${ !isDev() ? siteName.replace(/\s/g, '') + '.vercel.app':'localhost:3000'}/Checkout/canceled`,
       metadata : {
             uid: UID.toString(),
             cart: JSON.stringify(cart),

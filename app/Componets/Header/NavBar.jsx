@@ -30,6 +30,8 @@ function NavBar() {
     const category = useFilterEmptyCategory()
 
 
+    console.log(navRoute)
+
 
     const toggleMobileMenu = () => {
         setShowMobileMenu(!showMobileMenu)
