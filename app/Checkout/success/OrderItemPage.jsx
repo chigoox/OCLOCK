@@ -87,9 +87,8 @@ function OrderItemPage({ orderID }) {
     const run = async () => {
         await getData()
 
-        const { orders } = await fetchDocument('User', UID).then(resp => {
-            return resp ? resp : {};
-        }).catch(e => console.log(e))
+        const orderData = UID ? await fetchDocument('User', UID) : undefined
+        const orders = orderData?.orders ? orderData?.orders : {}
         if (Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`)) {
             setTimeout(() => {
                 setShowExitButton(true)
@@ -101,7 +100,6 @@ function OrderItemPage({ orderID }) {
             //updateDatabaseItem('Admin', 'Orders', 'orderID', orderID + 1)
 
 
-            sendEmail()
         }
 
 
