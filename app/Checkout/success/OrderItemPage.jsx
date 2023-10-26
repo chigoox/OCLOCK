@@ -1,6 +1,7 @@
 'use client'
 import { useAUTHListener } from '@/StateManager/AUTHListener'
 import { useCartContext } from '@/StateManager/CartContext'
+import { orderNumberPrefix } from '@/app/META'
 import { fetchDocument } from '@/app/myCodes/Database'
 import { sendMail } from '@/app/myCodes/Email'
 import IMG from '@/public/Images/luxlace.JPG'
@@ -69,8 +70,6 @@ function OrderItemPage({ orderID }) {
     if (!arrayQTY) getArrayToAddQTY()
     if (!arrayPrice) getArrayToAddPrice()
     if (!arrayImages) getArrayToAddImages()
-    const orderQTY = addArray(arrayQTY)
-    const orderPrice = addArray(arrayPrice)
 
 
 
@@ -80,9 +79,11 @@ function OrderItemPage({ orderID }) {
     const run = async () => {
         await getData()
 
-        const { orders } = UID ? await fetchDocument('User', UID) : { orders: {} }
-        console.log(orderID)
-        if (Object.keys(orders).includes(`Vi-${orderID - 1}`)) {
+        const { orders } = await fetchDocument('User', UID).then(resp => {
+            return resp ? resp : {};
+        })
+        console.log((`${orderNumberPrefix}-${orderID - 1}`))
+        if (Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`)) {
             setTimeout(() => {
                 setShowExitButton(true)
                 dispatch({ type: "EMPTY_CART", value: null })

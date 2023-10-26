@@ -25,6 +25,7 @@ export async function POST(request) {
     if (event.type === "checkout.session.completed") {
       const {uid} = event.data.object.metadata
       
+      console.log(uid)
 
       const {orderID} = await fetchDocument('Admin','Orders')
       const {ShippingInfo} = await fetchDocument('User',uid)
