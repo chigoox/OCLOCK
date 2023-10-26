@@ -3,6 +3,7 @@ import { addToDatabase } from '@/app/myCodes/Database'
 import { Button, Card, CardBody, CardFooter, CardHeader, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react'
 import React, { useState } from 'react'
 import { Uploader } from '../General/Uploader'
+import { siteEmail, siteName } from '@/app/META'
 
 function ShippinInfo({ user, forCheckOut, event }) {
     const [shippingInfo, setShippingInfo] = useState({})
@@ -112,17 +113,17 @@ function ShippinInfo({ user, forCheckOut, event }) {
                             <p>
                                 All orders will take 2-4 business days to be processed.
                                 All orders are shipped through USPS STANDARD SHIPPING which is 5-7 business days.
-                                If you accidentally entered the wrong shipping address, contact vihairwigs@outlook.com
-                                for a change of address. Vihair LLC is not reponsible for any lost items due to a wrong
+                                If you accidentally entered the wrong shipping address, contact {siteEmail}
+                                for a change of address. {siteName} LLC is not reponsible for any lost items due to a wrong
                                 shipping address.
                                 Thank you .
                             </p>
                             <h1 className='text-xl font-extrabold my-8' >Return Policy</h1>
                             <h1>
                                 All sales are FINAL and there are no refunds Exchanges.
-                                A Refund and Exchange will be only acceptable when we are at
+                                A Refund and Exchange will only be acceptable when we are at
                                 fault with a costumer’s order . If you have any questions concerning
-                                your order Email Vihairwigs@outlook.com.
+                                your order Email {siteEmail}.
                             </h1>
 
                             <h1>GOVERNMENT PHOTO ID IS REQUIRED FOR ALL ORDERS .</h1>

@@ -7,6 +7,7 @@ import RawWig from '../public/Images/RawWig.jpeg';
 
 export const siteName = 'Shop by 5 O\'clock'
 export const siteTag = 'For the Brave'
+export const siteEmail = 'em.ed5productions@gmail.com'
 
 
 export const NavBarVideoURL = '7FjL6i04_uY'

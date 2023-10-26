@@ -16,6 +16,7 @@ export default function Home() {
         img1={bannerImage[0]}
         text='For the Brave'
         text2='Shop Now!'
+        dim={true}
         img2={bannerImage[1]}
         img3={bannerImage[2]}
         img4={bannerImage[3]}
