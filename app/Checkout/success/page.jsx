@@ -4,9 +4,7 @@ import OrderItemPage from './OrderItemPage';
 
 async function success() {
 
-    const { orderID } = await fetchDocument('Admin', 'Orders').then(resp => {
-        return resp ? resp : {};
-    })
+    const orderID = await fetchDocument('Admin', 'Orders')
 
 
 
@@ -14,7 +12,7 @@ async function success() {
 
     return (
         <div>
-            <OrderItemPage orderID={orderID} />
+            <OrderItemPage orderID={orderID?.orderID} />
         </div>
     )
 }
