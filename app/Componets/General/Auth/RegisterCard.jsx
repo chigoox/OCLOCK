@@ -84,7 +84,7 @@ function RegisterCard({ toggleRegister }) {
                 <br />
                 <Button onPress={signup} className='w-1/2 m-auto font-bold text-white bg-black-800'>Sign Up</Button>
                 <Spacer y={2} />
-                <Button onPress={toggleRegister} className='h-8 min-w-0 w-fit  m-auto font-bold text-red bg-black-800'><AiFillCloseCircle size={32} /></Button>
+                <Button onPress={toggleRegister} className='h-8 min-w-0 w-fit  m-auto font-bold text-red bg-black-800'><AiFillCloseCircle color='white' size={32} /></Button>
 
 
             </Card>

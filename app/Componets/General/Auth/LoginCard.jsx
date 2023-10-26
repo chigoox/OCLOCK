@@ -1,12 +1,11 @@
 'use client'
 
-import React, { useState } from 'react';
-import { Card, Spacer, Button, Text, Input, Row, Checkbox } from '@nextui-org/react';
-import { EyeOffIcon, KeyIcon, MailCheckIcon } from 'lucide-react';
-import { AiFillEye, AiFillEyeInvisible, AiOutlineClose, AiOutlineCloseCircle, AiOutlineFacebook, AiOutlineGithub, AiOutlineGoogle } from 'react-icons/ai';
-import RegisterCard from './RegisterCard';
 import { checkLoggedinUser, logIn, loginWith } from '@/app/myCodes/Auth';
-
+import { Button, Card, Input, Spacer } from '@nextui-org/react';
+import { MailCheckIcon } from 'lucide-react';
+import { useState } from 'react';
+import { AiFillEye, AiFillEyeInvisible, AiOutlineCloseCircle, AiOutlineFacebook, AiOutlineGithub, AiOutlineGoogle } from 'react-icons/ai';
+import RegisterCard from './RegisterCard';
 
 
 

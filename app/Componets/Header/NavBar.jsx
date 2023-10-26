@@ -7,7 +7,7 @@ import { HomeIcon, ShoppingBagIcon, User } from 'lucide-react'
 import { Jost } from 'next/font/google'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { AiOutlineClose, AiOutlineShoppingCart, } from 'react-icons/ai'
 import LoginCard from '../General/Auth/LoginCard'
 import MenuButton from '../General/MobileMenuButton'
@@ -30,10 +30,14 @@ function NavBar() {
     const { push } = useRouter()
     const category = useFilterEmptyCategory()
 
-    const scrollPosition = useScrollPosition()
+    let scrollPosition = 1
+    scrollPosition = useScrollPosition()
 
 
 
+    useEffect(() => {
+
+    }, [])
 
 
 
@@ -96,7 +100,7 @@ function NavBar() {
 
                 </div>
             </div>
-            <nav className={`fixed  trans ${scrollPosition > 1 ? 'md:top-0' : 'md:top-8'}  -bottom-[1rem] items-center  justify-evenly ${showCart ? 'justify-center' : 'justify-center'}  flex md:flex-row  gap-4 md:gap-0 ${showMobileMenu ? 'h-16 scale-100 ' : 'h-0 p-0 '} ${showCart ? 'h-16 scale-100 w-[50%] md:w-[100%] md:left-[0%]  left-[50%] ' : 'w-[100%] left-[0%] '}  rounded-t-2xl md:rounded-none  bg-black-900 text-white  md:bg-black-800 group   md:h-8 z-[99999]`}>
+            <nav className={`fixed  trans ${scrollPosition > 0 ? 'md:top-0' : 'md:top-8'}  -bottom-[1rem] items-center  justify-evenly ${showCart ? 'justify-center' : 'justify-center'}  flex md:flex-row  gap-4 md:gap-0 ${showMobileMenu ? 'h-16 scale-100 ' : 'h-0 p-0 '} ${showCart ? 'h-16 scale-100 w-[50%] md:w-[100%] md:left-[0%]  left-[50%] ' : 'w-[100%] left-[0%] '}  rounded-t-2xl md:rounded-none  bg-black-900 text-white  md:bg-black-800 group   md:h-8 z-[99999]`}>
                 {!showCart && <button onClick={toggleMobileMenu} className={`absolute -top-[4.7rem] bg-black rounded-full h-12 w-12 center p-2 ${showCart ? '' : ''}`}>
                     <MenuButton menuOpen={showMobileMenu} />
                 </button>}
@@ -111,10 +115,10 @@ function NavBar() {
                 </div>
 
                 {<div className={` gap-2 w-[20%] ${showCart ? 'right-2 ' : 'right-4'} ${showMobileMenu ? 'absolute' : '-bottom-8 md:bottom-0'}  flex items-end justify-end`}>
-                    <Button onPress={toggleLogin} className={'min-w-0 h-fit w-fit p-1 center bg-none'}>
+                    <Button onPress={toggleLogin} className={'min-w-0 h-fit w-fit p-1 center bg-black text-white'}>
                         <User size={24} />
                     </Button>
-                    {<Button onClick={toggleCart} className={`trans min-w-0 h-0 w-0 md:h-fit md:w-fit p-1 center bg-none scale-0 md:scale-100`}>
+                    {<Button onClick={toggleCart} className={`trans bg-black text-white min-w-0 h-0 w-0 md:h-fit md:w-fit p-1 center bg-none scale-0 md:scale-100`}>
                         {!showCart ? <AiOutlineShoppingCart size={24} /> : <AiOutlineClose size={24} />}
                     </Button>}
                 </div>}
