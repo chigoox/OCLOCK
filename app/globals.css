@@ -224,11 +224,11 @@ used for Carouse
 
 .embla__container {
   display: flex;
+  margin-left: 0px;
 }
 
 .embla__slide {
   flex: 0 0 100%;
-  min-width: 0;
   width: auto;
 }
 

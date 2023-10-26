@@ -11,8 +11,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen overflow-x-hidden flex-col items-center justify-evenly bg-black text-white">
       <EmailCollectorMain />
+
       <EmblaCarousel
         img1={bannerImage[0]}
+        text='For the Brave'
+        text2='Shop Now!'
         img2={bannerImage[1]}
         img3={bannerImage[2]}
         img4={bannerImage[3]}

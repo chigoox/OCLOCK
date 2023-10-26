@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useCallback } from 'react'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
-export const EmblaCarousel = ({ img1, img2, img3, img4, rounded, noArrow, dim, text, text2, text3, text4, noZoom }) => {
+export const EmblaCarousel = ({ img1, img2, img3, img4, rounded, noArrow, dim, text, text2, text3, text4, noZoom, msg1 }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()])
 
     const scrollPrev = useCallback(() => {
@@ -29,7 +29,7 @@ export const EmblaCarousel = ({ img1, img2, img3, img4, rounded, noArrow, dim, t
 
     return (
         <div className="embla relative z-0 shadow-md shadow-black-800 ">
-            <div className={`embla__viewport bg-[#EEEFF0] zoom ${rounded ? 'h-[5rem]' : 'lg:h-[40rem] h-[25rem]'}  overflow-hidden`} ref={emblaRef}>
+            <div className={`embla__viewport bg-black-800 zoom ${rounded ? 'h-[5rem]' : 'lg:h-[40rem] h-[48rem]'}  overflow-hidden`} ref={emblaRef}>
                 <div className="embla__container h-full w-[100vw] relative   gap-4">
                     {img1 && <Slide rounded={rounded} img={img1} text={text} dim={dim} noZoom={noZoom} />}
                     {img2 && <Slide rounded={rounded} img={img2} text={text2} dim={dim} noZoom={noZoom} />}
