@@ -7,7 +7,7 @@ import { sendMail } from '@/app/myCodes/Email'
 import IMG from '@/public/Images/luxlace.JPG'
 import { Button } from '@nextui-org/react'
 import { useRouter } from "next/navigation"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 function OrderItemPage({ orderID }) {
@@ -18,7 +18,6 @@ function OrderItemPage({ orderID }) {
     const UID = user.uid ? user.uid : user.gid
     const [showExitButton, setShowExitButton] = useState(false)
     const [emailSent, setEmailSent] = useState(false)
-
 
     const getData = async () => {
 
@@ -72,8 +71,17 @@ function OrderItemPage({ orderID }) {
     if (!arrayImages) getArrayToAddImages()
 
 
+    const shipdata = data?.shipping
 
 
+
+    useEffect(() => {
+        if (!emailSent && shipdata) {
+            sendMail(data?.shipping, data?.shipping.email, 'Order Successfull', 'EmailOrderSuccessful', data?.cart.state, orderID)
+            setEmailSent(true)
+        }
+
+    }, [data])
 
 
     const run = async () => {
@@ -81,8 +89,7 @@ function OrderItemPage({ orderID }) {
 
         const { orders } = await fetchDocument('User', UID).then(resp => {
             return resp ? resp : {};
-        })
-        console.log((`${orderNumberPrefix}-${orderID - 1}`))
+        }).catch(e => console.log(e))
         if (Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`)) {
             setTimeout(() => {
                 setShowExitButton(true)
@@ -93,11 +100,8 @@ function OrderItemPage({ orderID }) {
 
             //updateDatabaseItem('Admin', 'Orders', 'orderID', orderID + 1)
 
-            if (!emailSent && data?.shipping) {
 
-                sendMail(data?.shipping, data?.shipping.email, 'Order Successfull', 'EmailOrderSuccessful', data?.cart.state, orderID)
-                setEmailSent(true)
-            }
+            sendEmail()
         }
 
 

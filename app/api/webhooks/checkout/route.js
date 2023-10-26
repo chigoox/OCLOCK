@@ -1,5 +1,6 @@
 import { orderNumberPrefix } from "@/app/META";
 import { addToDatabase, fetchDocument, updateDatabaseItem } from "@/app/myCodes/Database";
+import { sendMail } from "@/app/myCodes/Email";
 import Cors from "micro-cors";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
@@ -92,7 +93,6 @@ export async function POST(request) {
 
         if (Object.keys(orders).includes(`${orderNumberPrefix}-${orderID}`)) {
            
-
             updateDatabaseItem('Admin', 'Orders', 'orderID', orderID + 1)
         }
       
