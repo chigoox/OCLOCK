@@ -14,6 +14,7 @@ import MenuButton from '../General/MobileMenuButton'
 import { NavigationEvents } from "../NavigationEvents"
 import Cart from './Cart'
 import Banner from './Componets/Banner'
+import useScrollPosition from '@/app/Hooks/useScrollPosition'
 
 const jost = Jost({
     weight: '400',
@@ -29,8 +30,12 @@ function NavBar() {
     const { push } = useRouter()
     const category = useFilterEmptyCategory()
 
+    const scrollPosition = useScrollPosition()
 
-    console.log(navRoute)
+
+
+
+
 
 
     const toggleMobileMenu = () => {
@@ -59,13 +64,13 @@ function NavBar() {
     return (
         <div className='h-22 bg-black w-full  center-col overflow-hidden'>
 
-            <Cart showCart={showCart} />
+            <Cart showCart={showCart} setShowCart={setShowCart} />
             {(showLogin && (!user?.uid)) && <LoginCard toggleLogin={toggleLogin} />}
 
             <Suspense>
                 <NavigationEvents setRoute={setNavRoute} />
             </Suspense>
-            <div className='mt-0 md:mt-8 relative '>
+            <div className='mt-0 md:mt-0 relative '>
                 <div className=' h-10 center ' >
                     <Banner message={'New sale'} linkColor={'red'} link={'/'} linkMessage={'show Now'} />
                 </div>
@@ -91,7 +96,7 @@ function NavBar() {
 
                 </div>
             </div>
-            <nav className={`fixed  trans md:top-0 -bottom-[1rem] items-center  justify-evenly ${showCart ? 'justify-center' : 'justify-center'}  flex md:flex-row  gap-4 md:gap-0 ${showMobileMenu ? 'h-16 scale-100 ' : 'h-0 p-0 '} ${showCart ? 'h-16 scale-100 w-[50%] md:w-[100%] md:left-[0%]  left-[50%] ' : 'w-[100%] left-[0%] '}  rounded-t-2xl md:rounded-none  bg-black-900 text-white  md:bg-black-800 group   md:h-8 z-[99999]`}>
+            <nav className={`fixed  trans ${scrollPosition > 1 ? 'md:top-0' : 'md:top-8'}  -bottom-[1rem] items-center  justify-evenly ${showCart ? 'justify-center' : 'justify-center'}  flex md:flex-row  gap-4 md:gap-0 ${showMobileMenu ? 'h-16 scale-100 ' : 'h-0 p-0 '} ${showCart ? 'h-16 scale-100 w-[50%] md:w-[100%] md:left-[0%]  left-[50%] ' : 'w-[100%] left-[0%] '}  rounded-t-2xl md:rounded-none  bg-black-900 text-white  md:bg-black-800 group   md:h-8 z-[99999]`}>
                 {!showCart && <button onClick={toggleMobileMenu} className={`absolute -top-[4.7rem] bg-black rounded-full h-12 w-12 center p-2 ${showCart ? '' : ''}`}>
                     <MenuButton menuOpen={showMobileMenu} />
                 </button>}

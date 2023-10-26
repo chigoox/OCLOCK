@@ -9,9 +9,10 @@ import { useEffect, useState } from "react";
 import ShippinInfo from "../User/ShippinInfo";
 import { Card } from "@nextui-org/react";
 import { getRand } from "@/app/myCodes/Util";
+import { motion, useMotionValue, useTransform } from "framer-motion"
 
 
-function Cart({ showCart }) {
+function Cart({ showCart, setShowCart }) {
 
     const { state, dispatch } = useCartContext()
     const { lineItems, total } = state
@@ -57,7 +58,15 @@ function Cart({ showCart }) {
 
 
     return (
-        <div className={`fixed z-[999]  md:top-8 top-0 trans right-0 ${showCart ? 'w-[50vw] md:w-[25vw] p-2' : 'w-[0] P-0'} h-[100vh] bg-black`}>
+        <motion.div
+            onDragEnd={(event, info) => {
+                if (info.point.x > 900 && showCart) setShowCart(false)
+
+            }}
+            style={{ touchAction: "none" }}
+            drag='x'
+            dragConstraints={{ left: 0, right: 0, }}
+            className={`fixed z-[999]  md:top-8 top-0 trans  right-0 ${showCart ? 'w-[50vw] md:w-[25vw] p-2' : 'w-[0] P-0'} h-[100vh] bg-black`}>
             {(getShippingWindow && showCart) && <div className="absolute w-auto z-50  -left-40 ">
                 <ShippinInfo user={user} forCheckOut={getShippingInfo} />
             </div>}
@@ -111,7 +120,7 @@ function Cart({ showCart }) {
 
             </div>
 
-        </div >
+        </motion.div >
     )
 }
 

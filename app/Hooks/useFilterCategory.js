@@ -24,7 +24,6 @@ function useFilterEmptyCategory(_category = category) {
 
     }, [])
 
-    console.log(filteredCategory)
 
   return filteredCategory
   

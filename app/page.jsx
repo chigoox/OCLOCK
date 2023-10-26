@@ -9,7 +9,7 @@ import ProductsList from "./Shop/Componets/ProductsList";
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-evenly bg-black text-white">
+    <main className="flex min-h-screen overflow-x-hidden flex-col items-center justify-evenly bg-black text-white">
       <EmailCollectorMain />
       <EmblaCarousel
         img1={bannerImage[0]}
