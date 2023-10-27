@@ -5,13 +5,10 @@ import { useEffect, useState } from 'react'
 function ItemQTYButton({ state, setState, product, forCart }) {
     const { dispatch } = useCartContext()
     const [QTY, setQTY] = useState(product?.Qty ? product?.Qty : 0)
-    const [total, SetTotal] = useState(product?.price ? product?.price : 0)
-
     const controlQTY = (action = 'add', count = 1, event) => {
         if (action == 'add') setQTY(prevState => prevState < 99 ? prevState + count : prevState)
         if (action == 'sub') setQTY(prevState => prevState > 0 ? prevState - count : prevState)
         if (action == 'set') setQTY(event.target.value)
-
         if (product) {
             const currentItemInfo = { images: product.images, name: product.name, price: product.price, variant: product.variant, priceID: product.priceID }
             if (action == 'add') dispatch({ type: "ADD_TO_CART", value: { ...currentItemInfo, Qty: 1 } })
@@ -20,14 +17,17 @@ function ItemQTYButton({ state, setState, product, forCart }) {
         }
 
     }
-    if (QTY == 0 && product) {
-        setQTY()
-        dispatch({ type: "REMOVE_FROM_CART", value: product })
-    }
+    if (forCart) console.log()
+    if (forCart) console.log(QTY)
+
     useEffect(() => {
         if (setState) setState(prev => ({ ...prev, Qty: QTY }))
-
-    }, [QTY])
+        if (product?.Qty == 0 && product && forCart) {
+            console.log('first')
+            //setQTY()
+            dispatch({ type: "REMOVE_FROM_CART", value: product })
+        }
+    }, [QTY, product?.Qty])
     return (
         <div className="center h-1/2 w-fit m-auto my-2 bg-gray-50 rounded-full  overflow-hidden relative">
             <h1 className={`${forCart ? 'text-white' : ''} font-light absolute w-full text-center -top-5`}>Quntity</h1>
