@@ -83,7 +83,7 @@ function OrderItemPage({ orderID }) {
             setEmailSent(true)
         }
 
-        if (!data) run()
+
 
     }, [data])
 
@@ -119,14 +119,10 @@ function OrderItemPage({ orderID }) {
 
     const orderMap = Object.values(data?.cart?.state?.lineItems ? data?.cart?.state?.lineItems : {})
 
-    /*   useEffect(() => {
-          if (data?.shipping && data?.cart && UID) ordered().then((d) => {
-          }).catch((e) => {
-              console.log(e.message)
-          })
-  
-  
-      }, [data]) */
+
+
+    if (!data) run()
+
 
 
 
