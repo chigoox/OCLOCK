@@ -4,6 +4,7 @@ import { useCartContext } from '@/StateManager/CartContext'
 import { orderNumberPrefix } from '@/app/META'
 import { fetchDocument } from '@/app/myCodes/Database'
 import { sendMail } from '@/app/myCodes/Email'
+import { getRand } from '@/app/myCodes/Util'
 import IMG from '@/public/Images/luxlace.JPG'
 import { Button } from '@nextui-org/react'
 import { useRouter } from "next/navigation"
@@ -82,6 +83,8 @@ function OrderItemPage({ orderID }) {
             setEmailSent(true)
         }
 
+        if (!data) run()
+
     }, [data])
 
 
@@ -91,6 +94,7 @@ function OrderItemPage({ orderID }) {
         const orderData = UID ? await fetchDocument('User', UID) : undefined
         const orders = orderData?.orders ? orderData?.orders : {}
         console.log(Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`))
+        console.log(orders)
         if (Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`)) {
             setTimeout(() => {
                 setShowExitButton(true)
@@ -109,7 +113,7 @@ function OrderItemPage({ orderID }) {
 
 
 
-    if (!data) run()
+
 
 
 
@@ -138,7 +142,7 @@ function OrderItemPage({ orderID }) {
                     <div className='grid grid-cols-2 p-2 h-32 border-y overflow-y-scroll hidescroll  md:grid-cols-3 gap-1 w-full'>
                         {orderMap.map((item) => {
                             return (
-                                <div>
+                                <div key={item.name + getRand(9999)}>
                                     <div className='bg-white m-auto text-black center border-2 w-12 h-12 overflow-hidden rounded-full relative'>
                                         <h1 className='absolute h-full w-full text-2xl center text-white bg-opacity-50 bg-black'>{item.Qty}</h1>
                                         <img src={item.images[0]} alt="" />

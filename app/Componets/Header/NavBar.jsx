@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/react'
 import { HomeIcon, ShoppingBagIcon, User } from 'lucide-react'
 import { Jost } from 'next/font/google'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Suspense, useEffect, useState } from 'react'
 import { AiOutlineClose, AiOutlineShoppingCart, } from 'react-icons/ai'
 import LoginCard from '../General/Auth/LoginCard'
@@ -33,6 +33,7 @@ function NavBar() {
     let scrollPosition = 1
     scrollPosition = useScrollPosition()
 
+    const NoCart = usePathname().includes('Checkout')
 
 
     useEffect(() => {
@@ -105,9 +106,9 @@ function NavBar() {
                     <MenuButton menuOpen={showMobileMenu} />
                 </button>}
 
-                <button onClick={toggleCart} className={`trans bg-black rounded-full p-2 center  gap-4 absolute flex  ${showCart ? 'right-[88%] -top-[3rem]' : 'right-[2%] -top-[4.7rem]'}`}>
+                {!NoCart && <button onClick={toggleCart} className={`trans bg-black rounded-full p-2 center  gap-4 absolute flex  ${showCart ? 'right-[88%] -top-[3rem]' : 'right-[2%] -top-[4.7rem]'}`}>
                     {!showCart ? <AiOutlineShoppingCart size={32} /> : <AiOutlineClose size={32} />}
-                </button>
+                </button>}
 
                 <div className={`evenly gap-3 relative ${showCart ? 'right-3' : ''}`}>
                     <Link className='center' href={'/'}><HomeIcon size={showCart ? 24 : 32} />{!showCart && 'Home'}</Link>
