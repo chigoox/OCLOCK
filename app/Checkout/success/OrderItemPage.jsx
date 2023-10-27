@@ -23,6 +23,7 @@ function OrderItemPage({ orderID }) {
 
         const orderInfo = UID ? await fetchDocument('User', UID) : null
         if (orderInfo) setData({ shipping: orderInfo?.ShippingInfo, cart: orderInfo?.cart ? orderInfo?.cart : state.lineItems })
+        return { shipping: orderInfo?.ShippingInfo, cart: orderInfo?.cart ? orderInfo?.cart : state.lineItems }
 
     }
     const addArray = (array) => {
@@ -85,10 +86,11 @@ function OrderItemPage({ orderID }) {
 
 
     const run = async () => {
-        await getData()
+        const x = await getData()
 
         const orderData = UID ? await fetchDocument('User', UID) : undefined
         const orders = orderData?.orders ? orderData?.orders : {}
+        console.log(Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`))
         if (Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`)) {
             setTimeout(() => {
                 setShowExitButton(true)
