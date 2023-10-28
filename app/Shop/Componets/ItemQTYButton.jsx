@@ -17,8 +17,7 @@ function ItemQTYButton({ state, setState, product, forCart }) {
         }
 
     }
-    if (forCart) console.log()
-    if (forCart) console.log(QTY)
+
 
     useEffect(() => {
         if (setState) setState(prev => ({ ...prev, Qty: QTY }))
