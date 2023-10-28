@@ -141,7 +141,7 @@ const Product = ({ product, forThis, category }) => {
                                 onChange={({ target }) => { setItemToCheckOut(prev => ({ ...prev, price: Number(target.value.split(',', 3)[2]?.replace('$', '')), priceID: target.value.split(',', 2)[0], variant: target.value.split(',', 2)[1] })) }}
                                 labelPlacement={'outside'}
                                 label="Select Variant"
-                                className="max-w-xs my-8"
+                                className="max-w-xs my-8 text-black"
                             >
                                 {variants.map((variant) => {
                                     return (

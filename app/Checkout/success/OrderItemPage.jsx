@@ -92,21 +92,14 @@ function OrderItemPage({ orderID }) {
         const x = await getData()
 
         const orderData = UID ? await fetchDocument('User', UID) : undefined
-        const orders = orderData?.orders ? orderData?.orders : {}
-        console.log(Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`))
-        console.log(orders)
-        if (Object.keys(orders).includes(`${orderNumberPrefix}-${orderID - 1}`)) {
-            setTimeout(() => {
-                setShowExitButton(true)
-                dispatch({ type: "EMPTY_CART", value: null })
-                // setTimeout(() => { push('/Shop') }, 4000)
-            }, 3000);
+
+        setTimeout(() => {
+            setShowExitButton(true)
+            dispatch({ type: "EMPTY_CART", value: null })
+            // setTimeout(() => { push('/Shop') }, 4000)
+        }, 6000);
 
 
-            //updateDatabaseItem('Admin', 'Orders', 'orderID', orderID + 1)
-
-
-        }
 
 
     }
@@ -162,7 +155,6 @@ function OrderItemPage({ orderID }) {
                 </div>
             </div>
             <div className='h-40 overflow-hidden'>
-                <img className='object-cover rounded' src={IMG} alt="" />
 
             </div>
 
