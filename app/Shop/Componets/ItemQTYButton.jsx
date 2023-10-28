@@ -22,7 +22,6 @@ function ItemQTYButton({ state, setState, product, forCart }) {
     useEffect(() => {
         if (setState) setState(prev => ({ ...prev, Qty: QTY }))
         if (product?.Qty == 0 && product && forCart) {
-            console.log('first')
             //setQTY()
             dispatch({ type: "REMOVE_FROM_CART", value: product })
         }
